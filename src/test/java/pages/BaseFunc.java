@@ -31,6 +31,8 @@ public class BaseFunc {
         return driver.findElement(locator);
     }
 
-    public List<WebElement>
+    public List<WebElement> getElements(By locator) {
+        return driver.findElements(locator);
+    }
 
 }
