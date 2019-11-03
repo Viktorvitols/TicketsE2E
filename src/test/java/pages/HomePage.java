@@ -11,17 +11,10 @@ public class HomePage {
     private final By DIRECTION_B = By.id("bfrom");
     private final By GOGOGO = By.xpath(".//span[@class = 'gogogo']");
 
-
-
-
-    //constructor
     public HomePage (BaseFunc baseFunc) {
         this.baseFunc = baseFunc;
     }
 
-
-    String dirAValue;
-    String dirBValue;
 
     public String getBrandNameHP() {
         //Find element
@@ -33,12 +26,18 @@ public class HomePage {
     public void selectDirect(){
         Select directionA = new Select(baseFunc.getElement(DIRECTION_A));
         directionA.selectByValue("HAK");
-        dirAValue = baseFunc.getElement(DIRECTION_A).getText();
 
         Select directionB = new Select(baseFunc.getElement(DIRECTION_B));
         directionB.selectByValue("RIX");
-        dirBValue = baseFunc.getElement(DIRECTION_B).getText();
+    }
 
+    public String getDirAName() {
+        Select select = new Select(baseFunc.getElement(DIRECTION_A));
+        return select.getFirstSelectedOption().getText();
+    }
+    public String getDirBName() {
+        Select select = new Select(baseFunc.getElement(DIRECTION_B));
+        return select.getFirstSelectedOption().getText();
     }
 
     public void pressGoGoGo(){

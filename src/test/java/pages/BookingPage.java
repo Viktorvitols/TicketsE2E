@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class BookingPage {
 
@@ -19,8 +20,14 @@ public class BookingPage {
 
     }
 
-    public String getDestination() {
-        return baseFunc.getElements()
+    public String getDestinationA() {
+        WebElement fromA = baseFunc.getElements(DESTINATION).get(0);
+        return fromA.getText();
+    }
+    public String getDestinationB() {
+        WebElement destB = baseFunc.getElements(DESTINATION).get(1);
+        return destB.getText();
+
     }
 
 
