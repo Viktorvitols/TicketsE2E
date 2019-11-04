@@ -3,8 +3,9 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class BaseFunc {
     }
 
     public void goToUrl(String url) {
-        if (url.startsWith("http://") || url.startsWith("https://")){    // || - OR
+        if (url.startsWith("http://") || url.startsWith("https://")){
 
         } else {
             url = "http://" + url;
@@ -33,6 +34,22 @@ public class BaseFunc {
 
     public List<WebElement> getElements(By locator) {
         return driver.findElements(locator);
+    }
+
+    public void inputText(By locator, String text) {
+        getElement(locator).sendKeys(text);
+
+    }
+
+    public WebElement selectVisible (By locator){
+        Select select = new Select(getElement(locator));
+        return select.getFirstSelectedOption();
+    }
+
+    public void selectIndex (By locator,int index){
+        Select select = new Select(getElement(locator));
+        select.selectByIndex(index);
+
     }
 
 }

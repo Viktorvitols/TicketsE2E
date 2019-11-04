@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class BookingPage {
-
     private BaseFunc baseFunc;
 
     private final By TITLE = By.xpath(".//div[@class = 'toolbar']");

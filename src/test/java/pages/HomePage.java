@@ -32,12 +32,10 @@ public class HomePage {
     }
 
     public String getDirAName() {
-        Select select = new Select(baseFunc.getElement(DIRECTION_A));
-        return select.getFirstSelectedOption().getText();
+        return baseFunc.selectVisible(DIRECTION_A).getText();
     }
     public String getDirBName() {
-        Select select = new Select(baseFunc.getElement(DIRECTION_B));
-        return select.getFirstSelectedOption().getText();
+       return baseFunc.selectVisible(DIRECTION_B).getText();
     }
 
     public void pressGoGoGo(){
