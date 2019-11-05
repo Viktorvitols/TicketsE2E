@@ -11,7 +11,7 @@ public class HomePage {
     private final By DIRECTION_B = By.id("bfrom");
     private final By GOGOGO = By.xpath(".//span[@class = 'gogogo']");
 
-    public HomePage (BaseFunc baseFunc) {
+    public HomePage(BaseFunc baseFunc) {
         this.baseFunc = baseFunc;
     }
 
@@ -23,7 +23,7 @@ public class HomePage {
 
     }
 
-    public void selectDirect(){
+    public void selectDirect() {
         Select directionA = new Select(baseFunc.getElement(DIRECTION_A));
         directionA.selectByValue("HAK");
 
@@ -34,12 +34,13 @@ public class HomePage {
     public String getDirAName() {
         return baseFunc.selectVisible(DIRECTION_A).getText();
     }
+
     public String getDirBName() {
-       return baseFunc.selectVisible(DIRECTION_B).getText();
+        return baseFunc.selectVisible(DIRECTION_B).getText();
     }
 
-    public void pressGoGoGo(){
-        baseFunc.getElement(GOGOGO).click();
+    public void pressGoGoGo() {
+        baseFunc.click(GOGOGO);
     }
 
 }

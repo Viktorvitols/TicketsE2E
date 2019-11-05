@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class FillInForm {
     private BaseFunc baseFunc;
@@ -12,9 +13,10 @@ public class FillInForm {
     private final By CHILDREN = By.id("children");
     private final By BAGS = By.id("bugs");
     private final By FLIGHT = By.id("flight");
+    private final By GETPRICE = By.xpath(".//span[@onclick = 'setLang();']");
 
 
-    public FillInForm (BaseFunc baseFunc) {
+    public FillInForm(BaseFunc baseFunc) {
         this.baseFunc = baseFunc;
     }
 
@@ -27,7 +29,6 @@ public class FillInForm {
         baseFunc.inputText(BAGS, "1");
         baseFunc.selectIndex(FLIGHT, 1);
 
-
-
+        baseFunc.click(GETPRICE);
     }
 }

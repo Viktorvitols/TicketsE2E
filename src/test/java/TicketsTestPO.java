@@ -1,16 +1,14 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import pages.BaseFunc;
-import pages.BookingPage;
-import pages.HomePage;
-import pages.FillInForm;
+import pages.*;
 
 public class TicketsTestPO {
 
     private BaseFunc baseFunc = new BaseFunc();
-    HomePage homePage = new HomePage(baseFunc);
-    BookingPage bookingPage = new BookingPage(baseFunc);
-    FillInForm fillInForm = new FillInForm(baseFunc);
+    private HomePage homePage = new HomePage(baseFunc);
+    private BookingPage bookingPage = new BookingPage(baseFunc);
+    private FillInForm fillInForm = new FillInForm(baseFunc);
+    private Seats seats = new Seats(baseFunc);
 
     @Test
     public void poTest() {
@@ -37,7 +35,11 @@ public class TicketsTestPO {
 
         fillInForm.fillInFields();
 
+        bookingPage.book();
+        seats.seatSelect();
+        seats.book();
 
 
+//        baseFunc.close();
     }
 }
