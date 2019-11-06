@@ -29,11 +29,18 @@ public class TicketsTestPO {
         String dirANameBP = bookingPage.getDirAName();
         String dirBNameBP = bookingPage.getDirBName();
 
-        Assertions.assertEquals(dirANameHP, dirANameBP, "Selection 'from' doesn't match");
-        Assertions.assertEquals(dirBNameHP, dirBNameBP, "Selection 'to' doesn't match");
+        Assertions.assertEquals(dirANameHP, dirANameBP, "Selection 'from' doesn't match in booking");
+        Assertions.assertEquals(dirBNameHP, dirBNameBP, "Selection 'to' doesn't match in booking");
 
         fillInForm.fillInFields();
+        String dirANameResponse = bookingPage.getDirANameResponse();
+        String dirBNameResponse = bookingPage.getDirBNameResponse();
+
+//        Assertions.assertEquals(dirANameHP, dirANameResponse, "Selection 'from' doesn't match in response");
+//        Assertions.assertEquals(dirBNameHP, dirBNameResponse, "Selection 'to' doesn't match in response");
+
         bookingPage.book();
+
         seats.seatSelect();
         seats.book();
 
