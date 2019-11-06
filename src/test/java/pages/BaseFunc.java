@@ -21,7 +21,6 @@ public class BaseFunc {
 
     public void goToUrl(String url) {
         if (url.startsWith("http://") || url.startsWith("https://")) {
-
         } else {
             url = "http://" + url;
         }
@@ -30,10 +29,6 @@ public class BaseFunc {
 
     public WebElement getElement(By locator) {
         return driver.findElement(locator);
-    }
-
-    public WebElement getElementFromElement(WebElement element, By locator) {
-        return element.findElement(locator);
     }
 
     public List<WebElement> getElements(By locator) {
@@ -59,10 +54,8 @@ public class BaseFunc {
     }
 
 
-
-//    --------------------------------------
+    //-------- Close browser --------
     public void close() {
         driver.close();
     }
-
 }

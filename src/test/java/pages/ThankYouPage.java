@@ -10,6 +10,4 @@ public class ThankYouPage {
     public ThankYouPage(BaseFunc baseFunc) {
         this.baseFunc = baseFunc;
     }
-
-
 }

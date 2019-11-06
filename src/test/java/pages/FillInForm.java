@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class FillInForm {
     private BaseFunc baseFunc;
@@ -25,8 +24,8 @@ public class FillInForm {
         baseFunc.inputText(SURNAME, "Vitols");
         baseFunc.inputText(DISCOUNT, "50%");
         baseFunc.inputText(ADULTS, "1");
-        baseFunc.inputText(CHILDREN, "1");
-        baseFunc.inputText(BAGS, "1");
+        baseFunc.inputText(CHILDREN, "0");
+        baseFunc.inputText(BAGS, "0");
         baseFunc.selectIndex(FLIGHT, 1);
 
         baseFunc.click(GETPRICE);

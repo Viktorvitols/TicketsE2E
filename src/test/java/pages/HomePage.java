@@ -15,20 +15,18 @@ public class HomePage {
         this.baseFunc = baseFunc;
     }
 
-
     public String getBrandNameHP() {
         //Find element
         //save to string
         return baseFunc.getElement(TITLE).getText();
-
     }
 
     public void selectDirect() {
         Select directionA = new Select(baseFunc.getElement(DIRECTION_A));
-        directionA.selectByValue("HAK");
+        directionA.selectByValue("RIX");
 
         Select directionB = new Select(baseFunc.getElement(DIRECTION_B));
-        directionB.selectByValue("RIX");
+        directionB.selectByValue("BCN");
     }
 
     public String getDirAName() {

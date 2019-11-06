@@ -20,7 +20,4 @@ public class Seats {
     public void book(){
         baseFunc.click(BOOK3);
     }
-
-
-
 }
