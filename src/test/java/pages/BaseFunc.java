@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-
 import java.util.List;
 
 public class BaseFunc {
@@ -30,6 +29,10 @@ public class BaseFunc {
 
     public WebElement getElement(By locator) {
         return driver.findElement(locator);
+    }
+
+    public String getText(By locator) {
+        return driver.findElement(locator).getText();
     }
 
     public List<WebElement> getElements(By locator) {

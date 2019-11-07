@@ -18,7 +18,7 @@ public class BookingPage {
     }
 
     public String getBrandNameBP() {
-        return baseFunc.getElement(TITLE).getText();
+        return baseFunc.getText(TITLE);
     }
 
     public String getDirAName() {
@@ -35,14 +35,20 @@ public class BookingPage {
         baseFunc.click(BOOK2BTN);
     }
 
+    public String getNameResponse() {
+        List<WebElement> nameWE = baseFunc.getChildElements(RESPONSE, RESPONSE_CHILDREN);
+        String name = nameWE.get(0).getText();
+        return name.substring(0, name.length() - 1);
+    }
+
     public String getDirANameResponse() {
         List<WebElement> dirAName = baseFunc.getChildElements(RESPONSE, RESPONSE_CHILDREN);
-        return dirAName.get(0).getText();
+        return dirAName.get(1).getText();
     }
 
     public String getDirBNameResponse() {
         List<WebElement> dirBName = baseFunc.getChildElements(RESPONSE, RESPONSE_CHILDREN);
-        return dirBName.get(1).getText();
+        return dirBName.get(2).getText();
     }
 
 

@@ -9,6 +9,7 @@ public class TicketsTestPO {
     private BookingPage bookingPage = new BookingPage(baseFunc);
     private FillInForm fillInForm = new FillInForm(baseFunc);
     private Seats seats = new Seats(baseFunc);
+    private ThankYouPage thankYouPage = new ThankYouPage(baseFunc);
 
     @Test
     public void poTest() {
@@ -33,6 +34,11 @@ public class TicketsTestPO {
         Assertions.assertEquals(dirBNameHP, dirBNameBP, "Selection 'to' doesn't match in booking");
 
         fillInForm.fillInFields();
+        String nameInput = fillInForm.getName();
+        String nameResponse = bookingPage.getNameResponse();
+
+        Assertions.assertEquals(nameInput, nameResponse, "The response name is not correct");
+
         String dirANameResponse = bookingPage.getDirANameResponse();
         String dirBNameResponse = bookingPage.getDirBNameResponse();
 
@@ -41,8 +47,17 @@ public class TicketsTestPO {
 
         bookingPage.book();
 
+        String seatNr = seats.getSeatNr();
         seats.seatSelect();
+        String seatResponse = seats.getSeatResponse();
+
+        Assertions.assertEquals(seatNr, seatResponse, "Seat number does not match");
+
         seats.book();
+
+        String brandNameTP = thankYouPage.getBrandNameTP1();
+
+//        Assertions.assertEquals(brandNameHP, brandNameTP, "The title on the home page is not equal to the one on the thankyou page");
 
         baseFunc.close();
     }

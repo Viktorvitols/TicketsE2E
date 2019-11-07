@@ -18,7 +18,7 @@ public class HomePage {
     public String getBrandNameHP() {
         //Find element
         //save to string
-        return baseFunc.getElement(TITLE).getText();
+        return baseFunc.getText(TITLE);
     }
 
     public void selectDirect() {

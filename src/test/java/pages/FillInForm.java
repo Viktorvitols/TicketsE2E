@@ -19,8 +19,14 @@ public class FillInForm {
         this.baseFunc = baseFunc;
     }
 
+    String name = "Viktor";
+
+    public String getName() {
+        return this.name;
+    }
+
     public void fillInFields() {
-        baseFunc.inputText(NAME, "Viktor");
+        baseFunc.inputText(NAME, name);
         baseFunc.inputText(SURNAME, "Vitols");
         baseFunc.inputText(DISCOUNT, "50%");
         baseFunc.inputText(ADULTS, "1");
