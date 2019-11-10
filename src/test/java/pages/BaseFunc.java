@@ -39,25 +39,6 @@ public class BaseFunc {
         return driver.findElements(locator);
     }
 
-//    public WebElement getChildElement(By locatorParent, int i, By locatorChild, int ii) {
-//        WebElement parentElement;
-//        WebElement childElement;
-//
-//        List<WebElement> parentElements = driver.findElements(locatorParent);
-//        if (!parentElements.isEmpty()) {
-//            parentElement = parentElements.get(i);
-//            List<WebElement> childElements = parentElement.findElements(locatorChild);
-//            if (!childElements.isEmpty()) {
-//                childElement = childElements.get(ii);
-//            } else {
-//                System.out.println("Child element does not exist");
-//            }
-//        } else {
-//            System.out.println("Parent element does not exist");
-//        }
-//        return childElement;
-//    }
-
     public List<WebElement> getChildElements(By locatorParent, By locatorChild) {
 
         Assertions.assertFalse(driver.findElements(locatorParent)
